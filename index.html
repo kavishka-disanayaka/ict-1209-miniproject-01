@@ -51,7 +51,7 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
-          <a href="login.html" class="btn btn-fs-login">Login</a>
+          <a href="auth/login.html" class="btn btn-fs-login">Login</a>
         </div>
       </div>
     </nav>
@@ -286,18 +286,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Vanilla JS: basic interactions -->
-  <script>
-    // Toggle "active" state on category chips (single-select filter)
-    document.addEventListener('DOMContentLoaded', function () {
-      var chips = document.querySelectorAll('.chip');
-      chips.forEach(function (chip) {
-        chip.addEventListener('click', function () {
-          chips.forEach(function (c) { c.classList.remove('active'); });
-          chip.classList.add('active');
-        });
-      });
-    });
-  </script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>
