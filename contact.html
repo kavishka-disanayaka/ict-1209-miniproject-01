@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — FlavorSync</title>
+<meta name="description" content="Get in touch with the FlavorSync team.">
+
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<!-- top bar: plain, no bootstrap navbar this time -->
+<header class="c-topbar">
+  <a href="index.html" class="c-logo">
+    <span class="c-logo-dot"></span> FlavorSync
+  </a>
+
+  <button class="c-menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="c-nav" id="siteNav">
+    <a href="index.html">Home</a>
+    <a href="recipes.html">Recipes</a>
+    <!-- <a href="fridge-search.html">Fridge Search</a>
+    <a href="favorites.html">Favorites</a> -->
+    <a href="contact.html" class="is-active">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="c-hero">
+  <div class="c-hero-text">
+    <p class="c-kicker">Say hello</p>
+    <h1>Got a question,<br>a recipe idea,<br><span>or just hungry?</span></h1>
+    <p class="c-hero-sub">Drop us a line below — a real person on the FlavorSync team reads every message.</p>
+  </div>
+
+  <!-- decorative blob, pure css -->
+  <div class="c-blob" aria-hidden="true"></div>
+</section>
+
+<main class="c-main">
+
+  <!-- contact info cards -->
+  <section class="c-info-grid">
+    <div class="c-info-card">
+      <div class="c-info-icon">✉</div>
+      <h3>Email</h3>
+      <p>kavishkadisanayaka283@gmail.com</p>
+    </div>
+    <div class="c-info-card">
+      <div class="c-info-icon">☎</div>
+      <h3>Phone</h3>
+      <p>+94 717 665 982</p>
+    </div>
+    <div class="c-info-card">
+      <div class="c-info-icon">📍</div>
+      <h3>Studio</h3>
+      <p>Mihintale, Anuradhapura</p>
+    </div>
+    <div class="c-info-card">
+      <div class="c-info-icon">🕒</div>
+      <h3>Hours</h3>
+      <p>Mon – Fri, 9am – 5pm</p>
+    </div>
+  </section>
+
+  <!-- form + faq -->
+  <section class="c-body-grid">
+
+    <form class="c-form" id="contactForm" novalidate>
+      <h2>Send a message</h2>
+
+      <div class="c-field">
+        <input type="text" id="cName" name="name" placeholder=" " required>
+        <label for="cName">Your name</label>
+        <span class="c-error" id="errName">Please tell us your name</span>
+      </div>
+
+      <div class="c-field">
+        <input type="email" id="cEmail" name="email" placeholder=" " required>
+        <label for="cEmail">Email address</label>
+        <span class="c-error" id="errEmail">Enter a valid email</span>
+      </div>
+
+      <div class="c-field">
+        <select id="cSubject" name="subject" required>
+          <option value="" disabled selected hidden></option>
+          <option value="feedback">General feedback</option>
+          <option value="recipe">Recipe suggestion</option>
+          <option value="bug">Something's broken</option>
+          <option value="other">Other</option>
+        </select>
+        <label for="cSubject" class="c-label-select">What's this about?</label>
+      </div>
+
+      <div class="c-field">
+        <textarea id="cMessage" name="message" rows="5" placeholder=" " required maxlength="400"></textarea>
+        <label for="cMessage">Your message</label>
+        <span class="c-error" id="errMessage">Message can't be empty</span>
+        <span class="c-counter" id="charCount">400 left</span>
+      </div>
+
+      <button type="submit" class="c-submit" id="submitBtn">
+        <span class="c-submit-text">Send message</span>
+        <span class="c-submit-check">✓</span>
+      </button>
+
+      <p class="c-toast" id="formToast">Thanks! We'll get back to you soon.</p>
+    </form>
+
+    <!-- faq accordion -->
+    <div class="c-faq">
+      <h2>Quick answers</h2>
+
+      <div class="c-faq-item">
+        <button class="c-faq-q">
+          How fast do you reply?
+          <span class="c-faq-arrow">⌄</span>
+        </button>
+        <div class="c-faq-a">
+          <p>Usually within one working day. Recipe suggestions might take a little longer since we test them first.</p>
+        </div>
+      </div>
+
+      <div class="c-faq-item">
+        <button class="c-faq-q">
+          Can I submit my own recipe?
+          <span class="c-faq-arrow">⌄</span>
+        </button>
+        <div class="c-faq-a">
+          <p>Yes! Pick "Recipe suggestion" above and tell us the ingredients — our team will format and credit you.</p>
+        </div>
+      </div>
+
+      <div class="c-faq-item">
+        <button class="c-faq-q">
+          Found a bug in Cook Mode?
+          <span class="c-faq-arrow">⌄</span>
+        </button>
+        <div class="c-faq-a">
+          <p>Select "Something's broken" and mention your browser and device — that helps us fix it faster.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="c-footer">
+  <p>© 2026 FlavorSync — cook smarter with what you already have.</p>
+</footer>
+
+<script src="js/contact.js"></script>
+</body>
+</html>

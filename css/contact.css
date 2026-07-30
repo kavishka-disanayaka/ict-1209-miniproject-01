@@ -1,0 +1,349 @@
+/* Contact page — hand-built layout, same brand colors as the rest of the site */
+
+:root {
+  --forest: #2F5233;
+  --forest-dark: #203923;
+  --saffron: #E8A33D;
+  --clay: #C9542C;
+  --cream: #FBF6EC;
+  --sage: #EDE7D9;
+  --sage-line: #DCD3BC;
+  --ink: #2B2118;
+  --ink-soft: #6B5E4F;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; color: var(--forest-dark); }
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- top bar ---------- */
+.c-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 6%;
+  position: relative;
+  z-index: 10;
+}
+
+.c-logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--forest-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.c-logo-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--saffron);
+}
+
+.c-nav { display: flex; gap: 1.8rem; }
+.c-nav a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  position: relative;
+  padding-bottom: 4px;
+}
+.c-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--saffron);
+  transition: width 0.2s ease;
+}
+.c-nav a:hover::after,
+.c-nav a.is-active::after { width: 100%; }
+.c-nav a.is-active { color: var(--forest-dark); }
+
+/* mobile hamburger, hidden on desktop */
+.c-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.c-menu-btn span {
+  width: 24px; height: 2px;
+  background: var(--forest-dark);
+}
+
+/* ---------- hero ---------- */
+.c-hero {
+  position: relative;
+  padding: 3rem 6% 5rem;
+  overflow: hidden;
+}
+.c-kicker {
+  color: var(--clay);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.8rem;
+}
+.c-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+}
+.c-hero h1 span { color: var(--saffron-dark, #C97F1E); }
+.c-hero-sub {
+  max-width: 40ch;
+  margin-top: 1.2rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+/* soft organic shape floating behind the hero text */
+.c-blob {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle at 30% 30%, var(--saffron), var(--clay));
+  border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
+  opacity: 0.5;
+  filter: blur(2px);
+  animation: blobMove 10s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes blobMove {
+  0%, 100% { border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%; }
+  50% { border-radius: 45% 55% 40% 60% / 55% 40% 60% 40%; }
+}
+
+/* ---------- info cards ---------- */
+.c-main { padding: 0 6% 4rem; }
+
+.c-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 3.5rem;
+}
+.c-info-card {
+  background: #fff;
+  border: 1px solid var(--sage-line);
+  border-radius: 16px;
+  padding: 1.4rem 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.c-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(43,33,24,0.08);
+}
+.c-info-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+.c-info-card h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+.c-info-card p { color: var(--ink-soft); font-size: 0.92rem; }
+
+/* ---------- body: form + faq side by side ---------- */
+.c-body-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ---------- form ---------- */
+.c-form {
+  background: #fff;
+  border: 1px solid var(--sage-line);
+  border-radius: 20px;
+  padding: 2.2rem;
+}
+.c-form h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+
+.c-field {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.c-field input,
+.c-field select,
+.c-field textarea {
+  width: 100%;
+  border: 1.5px solid var(--sage-line);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-family: inherit;
+  font-size: 0.98rem;
+  background: transparent;
+  color: var(--ink);
+  resize: vertical;
+}
+.c-field input:focus,
+.c-field select:focus,
+.c-field textarea:focus {
+  outline: none;
+  border-color: var(--forest);
+}
+
+/* floating label: sits inside input until focused/filled */
+.c-field label {
+  position: absolute;
+  left: 1rem;
+  top: 0.9rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  pointer-events: none;
+  transition: all 0.15s ease;
+  background: #fff;
+  padding: 0 0.25rem;
+}
+.c-field input:focus + label,
+.c-field input:not(:placeholder-shown) + label,
+.c-field textarea:focus + label,
+.c-field textarea:not(:placeholder-shown) + label {
+  top: -0.55rem;
+  left: 0.8rem;
+  font-size: 0.75rem;
+  color: var(--forest);
+  font-weight: 700;
+}
+
+/* select doesn't support :placeholder-shown, label stays static above it */
+.c-label-select {
+  position: static !important;
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem !important;
+  font-weight: 700;
+  color: var(--ink-soft) !important;
+  background: none !important;
+}
+
+.c-error {
+  display: none;
+  color: var(--clay);
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+}
+.c-field.has-error input,
+.c-field.has-error select,
+.c-field.has-error textarea { border-color: var(--clay); }
+.c-field.has-error .c-error { display: block; }
+
+.c-counter {
+  position: absolute;
+  right: 0.2rem;
+  bottom: -1.3rem;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.c-submit {
+  width: 100%;
+  background: var(--forest);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.95rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+.c-submit:hover { background: var(--forest-dark); }
+.c-submit-check {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(120%);
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+.c-submit.is-sent .c-submit-text { opacity: 0; }
+.c-submit.is-sent .c-submit-check { transform: translateY(0); }
+
+.c-toast {
+  text-align: center;
+  color: var(--forest-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.c-toast.is-visible { opacity: 1; }
+
+/* ---------- faq ---------- */
+.c-faq h2 { font-size: 1.5rem; margin-bottom: 1.2rem; }
+.c-faq-item {
+  border-bottom: 1px solid var(--sage-line);
+}
+.c-faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.1rem 0;
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.c-faq-arrow { transition: transform 0.2s ease; color: var(--clay); }
+.c-faq-item.is-open .c-faq-arrow { transform: rotate(180deg); }
+
+.c-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+.c-faq-item.is-open .c-faq-a { max-height: 140px; }
+.c-faq-a p { padding-bottom: 1.1rem; color: var(--ink-soft); font-size: 0.92rem; }
+
+/* ---------- footer ---------- */
+.c-footer {
+  text-align: center;
+  padding: 1.6rem;
+  background: var(--ink);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .c-body-grid { grid-template-columns: 1fr; }
+  .c-info-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .c-menu-btn { display: flex; }
+  .c-nav {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem 6%;
+    display: none;
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .c-nav.is-open { display: flex; }
+  .c-info-grid { grid-template-columns: 1fr 1fr; }
+  .c-blob { width: 220px; height: 220px; top: -40px; right: -80px; }
+}
