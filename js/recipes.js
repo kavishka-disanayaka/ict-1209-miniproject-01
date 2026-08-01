@@ -95,4 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (searchInput) searchInput.addEventListener('input', applyFilters);
   if (sortSelect) sortSelect.addEventListener('change', applyFilters);
+
+  // pre-select category chip if page was opened as recipes.html?category=breakfast
+  const urlCategory = new URLSearchParams(window.location.search).get('category');
+  if (urlCategory) {
+    const matchingChip = document.querySelector(`.fs-chip[data-filter="category"][data-value="${urlCategory}"]`);
+    if (matchingChip) {
+      categoryChips.forEach(c => c.classList.remove('active'));
+      matchingChip.classList.add('active');
+    }
+  }
+ 
+  applyFilters();
 });

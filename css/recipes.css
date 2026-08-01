@@ -1,9 +1,9 @@
 
 
 :root {
-  --forest: #2F5233;
+  --forest: #153508;
   --forest-dark: #203923;
-  --saffron: #E8A33D;
+  --saffron: #c77d1c;
   --saffron-dark: #C97F1E;
   --clay: #C9542C;
   --cream: #FBF6EC;
@@ -12,6 +12,8 @@
   --ink: #2B2118;
   --ink-soft: #6B5E4F;
   --white: #FFFFFF;
+  --fs-mango-deep: #D98A2B;
+  --fs-mango: #F0A947;
 
   --radius: 14px;
   --radius-lg: 22px;
@@ -83,18 +85,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, .form-control:focus-
   border-radius: 999px;
   transition: background 0.18s ease, color 0.18s ease;
 }
-.fs-navbar .nav-link:hover { color: var(--white); background: rgba(255,255,255,0.1); }
-.fs-navbar .nav-link.active { color: var(--forest); background: var(--saffron); }
+.fs-navbar .nav-link:hover { color: var(--fs-mango-deep); }
+.fs-navbar .nav-link.active {color: var(--fs-mango-deep);; }
 .fs-navbar .btn-login {
-  border: 1.5px solid rgba(255,255,255,0.5);
+  background-color: var(--fs-mango);
   color: var(--white);
   border-radius: 999px;
   padding: 0.4rem 1.1rem;
   font-weight: 600;
   font-size: 0.92rem;
 }
-.fs-navbar .btn-login:hover { background: var(--white); color: var(--forest); }
-.fs-navbar .navbar-toggler { border-color: rgba(255,255,255,0.5); }
+
+
+.fs-navbar .btn-login:hover { background-color: var(--fs-mango-deep); }
+/* .fs-navbar .navbar-toggler { border-color: rgba(255,255,255,0.5); } */
 
 /* ---------- Page header (used across interior pages) ---------- */
 .fs-page-header {
@@ -241,13 +245,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, .form-control:focus-
 }
 .fs-card-btn:hover { color: var(--clay); }
 
+.media-1,
+.media-2,
+.media-3,
+.media-4,
+.media-5,
+.media-6,
+.media-7,
+.media-8,
+.media-9 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* card media gradient palette (stand-ins for photography) */
-.media-1 { background: linear-gradient(135deg, #C9542C, #E8A33D); }
-.media-2 { background: linear-gradient(135deg, #2F5233, #4C7A4F); }
-.media-3 { background: linear-gradient(135deg, #8A5A2E, #C9542C); }
-.media-4 { background: linear-gradient(135deg, #3E6B8A, #2F5233); }
-.media-5 { background: linear-gradient(135deg, #B0793A, #E8A33D); }
-.media-6 { background: linear-gradient(135deg, #6B4A8A, #C9542C); }
+.media-1 { background-image:url('https://png.pngtree.com/thumb_back/fh260/background/20230425/pngtree-fried-rice-food-new-home-chef-image_2553192.jpg');  }
+.media-2 { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6_ifLiG5XXaNr43b7-uY9nIEkfXBFNHLaOGhqkVYBoY7c34P_q7xqkW9z&s=10'); }
+.media-3 { background-image: url('https://cdn.loveandlemons.com/wp-content/uploads/2025/02/stir-fry-recipe.jpg'); }
+.media-4 { background-image: url('https://www.bordbia.ie/globalassets/bordbia.ie/lifestyle/recipes/bord-bia-recipe-images/updated---smoked-salmon-and-cream-cheese-fritatta.jpg?format=webp&quality=72&width=600');  }
+.media-5 { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9XGVU9fMIGKICNEr88w-pkewoXx1jbG4KQtDDgMqG1uxBRs4f7fGyMsBv&s=10'); }
+.media-6 { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDO5q8pQE9jlhNH4Cp1_vRMbnIeTuUyLkX6Ye7ZAqf9p8pnkFIDMilGkO3&s=10'); }
+.media-7 { background-image: url('https://constellationinspiration.com/wp-content/uploads/2023/07/mango-sticky-rice-36-683x1024.jpg'); }
+.media-8 { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYy_U7hxxpD3_nYqjxKI_lw54iFyVXUBREEQH-0JBtOa29fEz1PdkDSGE&s=10'); }  
+.media-9 { background-image: url('https://www.littlebigflavourkits.co.uk/cdn/shop/files/coconut-sambol-egg-sandwich-sri-lankan-style.jpg?v=1761153019&width=748'); }  
 
 /* ---------- Filter sidebar ---------- */
 .fs-filter-panel {
@@ -387,3 +408,4 @@ a:focus-visible, button:focus-visible, input:focus-visible, .form-control:focus-
   justify-content: center;
 }
 .fs-social:hover { border-color: var(--saffron); color: var(--saffron); }
+
