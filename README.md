@@ -30,10 +30,10 @@
 ICT-1209-MINIPROJECT-01/
 ├── asset/               # Static assets and images
 ├── auth/
-│   ├── login.css        # Login page styling
 │   └── login.html       # User login page
 ├── css/
 │   ├── contact.css      # Contact page custom styling
+│   ├── login.css        # Login page styling
 │   ├── recipes.css      # Recipes catalog custom styling
 │   └── style.css        # Global site custom styles
 ├── js/
@@ -47,7 +47,7 @@ ICT-1209-MINIPROJECT-01/
 
 
 
-## 🚀 Getting Started
+#  🚀 Getting Started
 
 Clone the repository:
    git clone (https://github.com/kavishka-disanayaka/ict-1209-miniproject-01.git)
