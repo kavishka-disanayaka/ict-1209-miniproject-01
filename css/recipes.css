@@ -12,6 +12,8 @@
   --ink: #2B2118;
   --ink-soft: #6B5E4F;
   --white: #FFFFFF;
+  --fs-mango-deep: #D98A2B;
+  --fs-mango: #F0A947;
 
   --radius: 14px;
   --radius-lg: 22px;
@@ -83,18 +85,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, .form-control:focus-
   border-radius: 999px;
   transition: background 0.18s ease, color 0.18s ease;
 }
-.fs-navbar .nav-link:hover { color: var(--white); background: rgba(255,255,255,0.1); }
-.fs-navbar .nav-link.active { color: var(--forest); background: var(--saffron); }
+.fs-navbar .nav-link:hover { color: var(--fs-mango-deep); }
+.fs-navbar .nav-link.active {color: var(--fs-mango-deep);; }
 .fs-navbar .btn-login {
-  border: 1.5px solid rgba(255,255,255,0.5);
+  background-color: var(--fs-mango);
   color: var(--white);
   border-radius: 999px;
   padding: 0.4rem 1.1rem;
   font-weight: 600;
   font-size: 0.92rem;
 }
-.fs-navbar .btn-login:hover { background: var(--white); color: var(--forest); }
-.fs-navbar .navbar-toggler { border-color: rgba(255,255,255,0.5); }
+
+
+.fs-navbar .btn-login:hover { background-color: var(--fs-mango-deep); }
+/* .fs-navbar .navbar-toggler { border-color: rgba(255,255,255,0.5); } */
 
 /* ---------- Page header (used across interior pages) ---------- */
 .fs-page-header {
