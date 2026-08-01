@@ -46,8 +46,12 @@ ICT-1209-MINIPROJECT-01/
 └── README.md            # Project documentation
 
 
-
-#  🚀 Getting Started
+🚀 Getting Started
 
 Clone the repository:
    git clone (https://github.com/kavishka-disanayaka/ict-1209-miniproject-01.git)
+
+👥 Group Members & Credits
+
+Kavishka Disanayaka - 2716
+Matheesha Chathuranga - 2709
