@@ -28,35 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
     counter.textContent = `${MAX - message.value.length} left`;
   });
 
-  // form validation + fake submit
+ // form validation
   const form = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const toast = document.getElementById('formToast');
-
   const name = document.getElementById('cName');
   const email = document.getElementById('cEmail');
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let valid = true;
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      let valid = true;
 
-    valid = checkField(name, name.value.trim().length > 1) && valid;
-    valid = checkField(email, isValidEmail(email.value)) && valid;
-    valid = checkField(message, message.value.trim().length > 0) && valid;
+      valid = checkField(name, name.value.trim().length > 1) && valid;
+      valid = checkField(email, isValidEmail(email.value)) && valid;
+      valid = checkField(message, message.value.trim().length > 0) && valid;
 
-    if (!valid) return;
-
-    // no backend yet — Phase 3 wires this to PHP/MySQL
-    submitBtn.classList.add('is-sent');
-    toast.classList.add('is-visible');
-
-    setTimeout(() => {
-      form.reset();
-      counter.textContent = `${MAX} left`;
-      submitBtn.classList.remove('is-sent');
-      toast.classList.remove('is-visible');
-    }, 2500);
-  });
+      // Input වැරදි නම් පමණක් Submit වීම නවත්වන්න
+      if (!valid) {
+        e.preventDefault();
+      }
+      // Inputs නිවැරදි නම් PHP backend එක වෙත submit වීමට ඉඩ දෙයි
+    });
+  }
 
   function checkField(field, condition) {
     const wrapper = field.closest('.c-field');
