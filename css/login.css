@@ -1,9 +1,4 @@
-/* ==========================================================================
-   FlavorSync — Login Page Styles (standalone)
-   This file is self-contained: it does NOT depend on css/style.css.
-   Reuses the same FlavorSync design tokens (colors, fonts, radii) so the
-   login page matches the rest of the site.
-   ========================================================================== */
+
 
 :root {
   /* Color tokens */
