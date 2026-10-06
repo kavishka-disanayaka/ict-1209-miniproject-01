@@ -1,3 +1,29 @@
+<?php
+session_start();
+require_once 'includes/db.php';
+
+$msg = "";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $message = trim($_POST['message']);
+
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        // Message එක Database එකට Save කිරීම (Assignment Requirement)
+        $stmt = $conn->prepare("INSERT INTO messages (name, email, message) VALUES (:name, :email, :message)");
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':message', $message);
+
+        if ($stmt->execute()) {
+            $msg = "<div class='alert alert-success'>Thank you! Your message has been sent.</div>";
+        } else {
+            $msg = "<div class='alert alert-danger'>Failed to send message. Try again.</div>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +42,7 @@
 
 <!-- top bar: plain, no bootstrap navbar this time -->
 <header class="c-topbar">
-  <a href="index.html" class="c-logo">
+  <a href="index.php" class="c-logo">
     <span class="c-logo-dot"></span> FlavorSync
   </a>
 
@@ -25,12 +51,12 @@
   </button>
 
   <nav class="c-nav" id="siteNav">
-    <a href="index.html">Home</a>
-    <a href="recipes.html">Recipes</a>
+    <a href="index.php">Home</a>
+    <a href="recipes.php">Recipes</a>
     <!-- <a href="fridge-search.html">Fridge Search</a>
     <a href="favorites.html">Favorites</a> -->
-    <a href="contact.html" class="is-active">Contact</a>
-    <a class="btn-login" href="auth/login.html">Login</a></li>
+    <a href="contact.php" class="is-active">Contact</a>
+    <a class="btn-login" href="auth/login.php">Login</a></li>
 
   </nav>
 </header>
@@ -76,8 +102,10 @@
   <!-- form + faq -->
   <section class="c-body-grid">
 
-    <form class="c-form" id="contactForm" novalidate>
-      <h2>Send a message</h2>
+    <form class="c-form" id="contactForm" action="contact.php" method="POST">
+
+      <!-- PHP Message එක මෙතැනින් Display වේ -->
+      <?php echo $msg; ?>
 
       <div class="c-field">
         <input type="text" id="cName" name="name" placeholder=" " required>
@@ -169,9 +197,9 @@
     <div class="fs-footer-col">
       <h6>Explore</h6>
       <ul class="fs-footer-links">
-        <li><a href="recipes.html">All Recipes</a></li>
-        <li><a href="fridge-search.html">Fridge Search</a></li>
-        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="recipes.php">All Recipes</a></li>
+        <li><a href="fridge-search.php">Fridge Search</a></li>
+        <li><a href="favorites.php">Favorites</a></li>
       </ul>
     </div>
 
@@ -179,7 +207,7 @@
       <h6>About</h6>
       <ul class="fs-footer-links">
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.php">Contact</a></li>
       </ul>
     </div>
 

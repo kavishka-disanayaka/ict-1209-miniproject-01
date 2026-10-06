@@ -8,10 +8,10 @@
   /* Color tokens */
   --fs-cream: #F7F2E4;         /* page background — warm rice-paper */
   --fs-cream-card: #FFFDF8;    /* card surfaces */
-  --fs-ink: #23291F;           /* primary text — deep charcoal-green */
+  --inkfs-: #23291F;           /* primary text — deep charcoal-green */
   --fs-ink-soft: #5B6259;      /* secondary text */
-  --fs-green: #3C6E47;         /* herb green — primary brand accent */
-  --fs-green-dark: #26472E;    /* hover/active green */
+  --fs-green: #F0A947;         /* herb green — primary brand accent */
+  --fs-green-dark: #D98A2B;    /* hover/active green */
   --fs-green-tint: #E4EEE3;    /* pale green surface */
   --fs-mango: #F0A947;         /* mango/saffron — secondary accent */
   --fs-mango-deep: #D98A2B;    /* mango hover */
@@ -81,7 +81,7 @@ input:focus-visible,
    ========================================================================== */
 
 .fs-navbar {
-  background-color: var(--fs-cream-card);
+  background-color: var(--inkfs-);
   border-bottom: 1px solid var(--fs-line);
 }
 
@@ -89,7 +89,7 @@ input:focus-visible,
   font-family: var(--fs-font-display);
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--fs-green-dark);
+  color: var(--fs-mango-deep);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -101,7 +101,7 @@ input:focus-visible,
 }
 
 .fs-navbar .nav-link {
-  color: var(--fs-ink);
+  color: #fff;
   font-weight: 500;
   margin: 0 0.35rem;
   position: relative;
@@ -109,7 +109,7 @@ input:focus-visible,
 }
 
 .fs-navbar .nav-link.active {
-  color: var(--fs-green-dark);
+  color: var(--fs-mango-deep);
   font-weight: 700;
 }
 
@@ -125,12 +125,12 @@ input:focus-visible,
 }
 
 .fs-navbar .nav-link:hover {
-  color: var(--fs-green-dark);
+  color: var(--fs-mango-deep);
 }
 
 .btn-fs-login {
   border-radius: var(--fs-radius-pill);
-  background-color: var(--fs-green);
+  background-color: var(--fs-mango);
   color: #fff;
   font-weight: 600;
   padding: 0.5rem 1.4rem;
@@ -139,7 +139,7 @@ input:focus-visible,
 }
 
 .btn-fs-login:hover {
-  background-color: var(--fs-green-dark);
+  background-color: var(--fs-mango-deep);
   color: #fff;
   transform: translateY(-1px);
 }
@@ -153,8 +153,8 @@ input:focus-visible,
   overflow: hidden;
   padding: 5.5rem 0 6.5rem;
   background:
-    radial-gradient(60% 55% at 85% 10%, rgba(240, 169, 71, 0.20), transparent 60%),
-    radial-gradient(50% 50% at 5% 95%, rgba(60, 110, 71, 0.16), transparent 60%),
+    radial-gradient(60% 55% at 85% 10%, rgba(240, 169, 71, 0.20), transparent 70%),
+    radial-gradient(50% 50% at 5% 95%, rgba(60, 110, 71, 0.16), transparent 70%),
     var(--fs-cream);
 }
 
@@ -182,7 +182,7 @@ input:focus-visible,
   height: 160px;
   bottom: -30px;
   left: 6%;
-  background: var(--fs-green);
+  background: var(--fs-mango);
   opacity: 0.14;
   animation: fs-drift 11s ease-in-out infinite reverse;
 }
@@ -196,6 +196,9 @@ input:focus-visible,
   position: relative;
   z-index: 1;
   max-width: 780px;
+  margin-left: auto;  
+  margin-right: auto; 
+  text-align: center;
 }
 
 .fs-eyebrow {
@@ -212,12 +215,14 @@ input:focus-visible,
   border-radius: var(--fs-radius-pill);
   padding: 0.4rem 0.9rem;
   margin-bottom: 1.25rem;
+  
 }
 
 .fs-hero h1 {
   font-size: clamp(2.1rem, 4.2vw, 3.4rem);
   line-height: 1.08;
   margin-bottom: 1rem;
+  
 }
 
 .fs-hero h1 .fs-underline {
@@ -225,15 +230,23 @@ input:focus-visible,
 }
 
 .fs-hero p.lead {
+  
   color: var(--fs-ink-soft);
   font-size: 1.15rem;
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; 
   margin-bottom: 2.25rem;
+  
+
+  
 }
 
 /* Search bar */
 .fs-search {
   max-width: 640px;
+  margin: 0 auto;
+
 }
 
 .fs-search .form-control {
@@ -276,6 +289,7 @@ input:focus-visible,
 .fs-chips {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.7rem;
   padding: 2.25rem 0;
 }
@@ -349,6 +363,12 @@ input:focus-visible,
   justify-content: center;
   font-size: 2.6rem;
   color: #fff;
+}
+
+.fs-recipe-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .fs-recipe-thumb--rice { background: linear-gradient(135deg, #E8A93F, #C97A2A); }
@@ -475,14 +495,14 @@ input:focus-visible,
 
 .fs-carousel-slide {
   border-radius: var(--fs-radius-lg);
-  padding: 3rem;
+  padding: 5rem;
   min-height: 320px;
   display: flex;
   align-items: center;
   color: #fff;
 }
 
-.fs-carousel-slide__icon {
+.fs-carousel-slide img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -495,19 +515,32 @@ input:focus-visible,
 }
 
 .fs-carousel-slide h3 {
-  color: #fff;
+  color: #f7f5f5;
   font-size: 1.6rem;
   margin-bottom: 0.4rem;
 }
 
 .fs-carousel-slide p {
-  color: rgba(255, 255, 255, 0.85);
+  color: #f6f3f3;
   margin-bottom: 0.75rem;
 }
 
-.fs-slide--1 { background: linear-gradient(135deg, #C4622F, #8F4522); }
-.fs-slide--2 { background: linear-gradient(135deg, #3C6E47, #26472E); }
-.fs-slide--3 { background: linear-gradient(135deg, #D98A2B, #A8641C); }
+.fs-slide--1,
+.fs-slide--2,
+.fs-slide--3 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  
+}
+
+.fs-slide--1 { background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+  url("https://static.vecteezy.com/system/resources/previews/050/752/018/large_2x/low-angle-view-of-chicken-kottu-dish-on-white-background-photo.jpg");}
+.fs-slide--2 { background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+  url("https://skinnyms.com/wp-content/uploads/2018/01/Broccoli-and-Mushroom-Stir-Fry-Vegan-Stir-Fry-Recipes.jpg"); }
+.fs-slide--3 { background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+  url("https://www.foodandwine.com/thmb/dxjRFznfUtQk_N9ULBSIH8LbKiA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/How-to-Make-Takeout-Style-Fried-Rice-at-Home-FT-BLOG0924-714de2b6a3c144ea8de25faece8f35d7.jpg"); }
 
 #trendingCarousel .carousel-control-prev,
 #trendingCarousel .carousel-control-next {
@@ -523,7 +556,7 @@ input:focus-visible,
 }
 
 #trendingCarousel .carousel-indicators [data-bs-target] {
-  background-color: var(--fs-green);
+  background-color: var(--inkfs-);
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -534,7 +567,7 @@ input:focus-visible,
    ========================================================================== */
 
 .fs-footer {
-  background-color: var(--fs-ink);
+  background-color: var(--inkfs-);
   color: rgba(255, 255, 255, 0.75);
   padding: 3rem 0 1.5rem;
 }

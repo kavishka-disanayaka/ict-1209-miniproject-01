@@ -18,20 +18,12 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<<<<<<< HEAD
-    <h1 class="text-center my-4">welcome</h1>
-    enroll
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script src="js/index.js"></script>
-=======
->>>>>>> 05e4bc43772d4029ec2c9cb6b456006209cb7732
 
   <!-- ============================= NAVBAR ============================= -->
   <header>
     <nav class="navbar navbar-expand-lg fs-navbar sticky-top py-3">
       <div class="container">
-        <a class="navbar-brand fs-brand" href="index.html">
+        <a class="navbar-brand fs-brand" href="index.php">
           <i class="bi bi-egg-fried"></i>
           FlavorSync
         </a>
@@ -47,19 +39,19 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="fridge-search.html">Fridge Search</a>
+              <a class="nav-link" href="fridge-search.php">Fridge Search</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="recipes.html">Recipes</a>
+              <a class="nav-link" href="recipes.php">Recipes</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="favorites.html">Favorites</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </li>
           </ul>
-          <a href="auth/login.html" class="btn btn-fs-login">Login</a>
+          <a href="auth/login.php" class="btn btn-fs-login">Login</a>
         </div>
       </div>
     </nav>
@@ -78,7 +70,7 @@
           <p class="lead">Smart ingredient-aware search, live scaling, and hands-free guided cooking.</p>
 
           <!-- Search Bar -->
-          <form class="fs-search" role="search" action="recipes.html" method="get">
+          <form class="fs-search" role="search" action="recipes.php" method="get">
             <div class="input-group">
               <input type="search" name="q" class="form-control" placeholder="Search recipes, e.g. &quot;egg fried rice&quot;" aria-label="Search recipes">
               <button class="btn btn-search" type="submit">
@@ -90,10 +82,10 @@
 
         <!-- ===================== CATEGORY CHIPS ===================== -->
         <div class="fs-chips" role="group" aria-label="Recipe category filters">
-          <a href="recipes.html?category=breakfast" class="chip active">Breakfast</a>
-          <a href="recipes.html?category=lunch" class="chip">Lunch</a>
-          <a href="recipes.html?category=dinner" class="chip">Dinner</a>
-          <a href="recipes.html?category=dessert" class="chip">Dessert</a>
+          <a href="recipes.php?category=breakfast" class="chip active">Breakfast</a>
+          <a href="recipes.php?category=lunch" class="chip">Lunch</a>
+          <a href="recipes.php?category=dinner" class="chip">Dinner</a>
+          <a href="recipes.php?category=dessert" class="chip">Dessert</a>
           <!-- <button type="button" class="chip">Vegan</button>
           <button type="button" class="chip">Quick (&lt;20 min)</button> -->
         </div>
@@ -121,7 +113,7 @@
                 <div class="fs-recipe-meta">
                   <i class="bi bi-clock"></i> Prep: 15 min
                 </div>
-                <a href="recipe-detail.html" class="btn btn-fs-outline">View Recipe</a>
+                <a href="recipe-detail.php" class="btn btn-fs-outline">View Recipe</a>
               </div>
             </article>
           </div>
@@ -139,7 +131,7 @@
                 <div class="fs-recipe-meta">
                   <i class="bi bi-clock"></i> Prep: 25 min
                 </div>
-                <a href="recipe-detail.html" class="btn btn-fs-outline">View Recipe</a>
+                <a href="recipe-detail.php" class="btn btn-fs-outline">View Recipe</a>
               </div>
             </article>
           </div>
@@ -157,7 +149,7 @@
                 <div class="fs-recipe-meta">
                   <i class="bi bi-clock"></i> Prep: 15 min
                 </div>
-                <a href="recipe-detail.html" class="btn btn-fs-outline">View Recipe</a>
+                <a href="recipe-detail.php" class="btn btn-fs-outline">View Recipe</a>
               </div>
             </article>
           </div>
@@ -174,7 +166,7 @@
             <h2>Only got a few ingredients?</h2>
             <p>Try our "What's in My Fridge?" smart search — tell us what you have, we'll tell you what to cook.</p>
           </div>
-          <a href="fridge-search.html" class="btn btn-fs-mango">
+          <a href="fridge-search.php" class="btn btn-fs-mango">
             Try Now <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -204,7 +196,7 @@
                 <div>
                   <h3>Chicken Kottu</h3>
                   <p>The Sri Lankan street-food favourite, chopped and stir-fried to order. 2.3k favourites this week.</p>
-                  <a href="recipe-detail.html" class="btn btn-fs-mango btn-sm">View Recipe</a>
+                  <a href="recipe-detail.php" class="btn btn-fs-mango btn-sm">View Recipe</a>
                 </div>
               </div>
             </div>
@@ -215,7 +207,7 @@
                 <div>
                   <h3>Vegan Stir-Fry</h3>
                   <p>A vibrant, veg-forward wok dish ready in 15 minutes. 1.8k favourites this week.</p>
-                  <a href="recipe-detail.html" class="btn btn-fs-mango btn-sm">View Recipe</a>
+                  <a href="recipe-detail.php" class="btn btn-fs-mango btn-sm">View Recipe</a>
                 </div>
               </div>
             </div>
@@ -227,7 +219,7 @@
                 <div>
                   <h3>Egg Fried Rice</h3>
                   <p>The five-ingredient weeknight staple everyone keeps coming back to. 1.6k favourites this week.</p>
-                  <a href="recipe-detail.html" class="btn btn-fs-mango btn-sm">View Recipe</a>
+                  <a href="recipe-detail.php" class="btn btn-fs-mango btn-sm">View Recipe</a>
                 </div>
               </div>
             </div>
@@ -255,7 +247,7 @@
       <div class="row g-4">
 
         <div class="col-lg-4">
-          <a href="index.html" class="navbar-brand fs-brand mb-2 d-inline-flex">
+          <a href="index.php" class="navbar-brand fs-brand mb-2 d-inline-flex">
             <i class="bi bi-egg-fried"></i> FlavorSync
           </a>
           <p class="mb-3">Your advanced digital recipe book — cook smarter with what's already in your kitchen.</p>
@@ -269,16 +261,15 @@
         <div class="col-6 col-lg-4">
           <h6>Quick Links</h6>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="about.html">About</a></li>
-            <li class="mb-2"><a href="contact.html">Contact</a></li>
+            <li class="mb-2"><a href="contact.php">Contact</a></li>
           </ul>
         </div>
 
         <div class="col-6 col-lg-4">
           <h6>Explore</h6>
           <ul class="list-unstyled">
-            <!-- <li class="mb-2"><a href="fridge-search.html">Fridge Search</a></li> -->
-            <li class="mb-2"><a href="recipes.html">Recipes</a></li>
+            <!-- <li class="mb-2"><a href="fridge-search.php">Fridge Search</a></li> -->
+            <li class="mb-2"><a href="recipes.php">Recipes</a></li>
             <!-- <li class="mb-2"><a href="favorites.html">Favorites</a></li> -->
           </ul>
         </div>
