@@ -97,13 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sortSelect) sortSelect.addEventListener('change', applyFilters);
 
   // pre-select category chip if page was opened as recipes.html?category=breakfast
-  const urlCategory = new URLSearchParams(window.location.search).get('category');
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlCategory = urlParams.get('category');
   if (urlCategory) {
     const matchingChip = document.querySelector(`.fs-chip[data-filter="category"][data-value="${urlCategory}"]`);
     if (matchingChip) {
       categoryChips.forEach(c => c.classList.remove('active'));
       matchingChip.classList.add('active');
     }
+  }
+
+  const urlQ = urlParams.get('q');
+  if (urlQ && searchInput) {
+    searchInput.value = urlQ;
   }
  
   applyFilters();
