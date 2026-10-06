@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlavorSync — Advanced Digital Recipe Book</title>
+  <meta name="description" content="Find the perfect recipe with what you already have. Smart ingredient-aware search, live scaling, and hands-free guided cooking.">
+
+  <!-- Bootstrap 5.3 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Google Fonts: Fraunces (display) + Plus Jakarta Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header>
+    <nav class="navbar navbar-expand-lg fs-navbar sticky-top py-3">
+      <div class="container">
+        <a class="navbar-brand fs-brand" href="index.php">
+          <i class="bi bi-egg-fried"></i>
+          FlavorSync
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fsNavbar"
+                aria-controls="fsNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="fsNavbar">
+          <ul class="navbar-nav ms-auto me-lg-3 my-3 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="fridge-search.php">Fridge Search</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="recipes.php">Recipes</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="favorites.html">Favorites</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="contact.php">Contact</a>
+            </li>
+          </ul>
+          <a href="auth/login.php" class="btn btn-fs-login">Login</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================= HERO ============================= -->
+    <section class="fs-hero">
+      <div class="fs-hero__blob fs-hero__blob--1" aria-hidden="true"></div>
+      <div class="fs-hero__blob fs-hero__blob--2" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="fs-hero__content  mx-auto">
+          <h1>Find the perfect recipe with what you <span class="fs-underline">already have</span></h1>
+          <p class="lead">Smart ingredient-aware search, live scaling, and hands-free guided cooking.</p>
+
+          <!-- Search Bar -->
+          <form class="fs-search" role="search" action="recipes.php" method="get">
+            <div class="input-group">
+              <input type="search" name="q" class="form-control" placeholder="Search recipes, e.g. &quot;egg fried rice&quot;" aria-label="Search recipes">
+              <button class="btn btn-search" type="submit">
+                <i class="bi bi-search"></i> Search
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ===================== CATEGORY CHIPS ===================== -->
+        <div class="fs-chips" role="group" aria-label="Recipe category filters">
+          <a href="recipes.php?category=breakfast" class="chip active">Breakfast</a>
+          <a href="recipes.php?category=lunch" class="chip">Lunch</a>
+          <a href="recipes.php?category=dinner" class="chip">Dinner</a>
+          <a href="recipes.php?category=dessert" class="chip">Dessert</a>
+          <!-- <button type="button" class="chip">Vegan</button>
+          <button type="button" class="chip">Quick (&lt;20 min)</button> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== POPULAR RECIPES ===================== -->
+    <section class="fs-section" id="popular-recipes">
+      <div class="container">
+        <h2 class="fs-section-title">Popular Recipes</h2>
+        <p class="fs-section-sub">Loved by the FlavorSync community this month.</p>
+
+        <div class="row g-4">
+
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="fs-recipe-card card">
+              <div class="fs-recipe-thumb fs-recipe-thumb--rice">
+                <!-- <i class="bi bi-egg-fried"></i> -->
+                 <img src="https://www.foodandwine.com/thmb/dxjRFznfUtQk_N9ULBSIH8LbKiA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/How-to-Make-Takeout-Style-Fried-Rice-at-Home-FT-BLOG0924-714de2b6a3c144ea8de25faece8f35d7.jpg" alt="Egg Fried Rice" class="card-img-top">
+                <span class="fs-rating-badge"><i class="bi bi-star-fill"></i> 4.5/5</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Egg Fried Rice</h3>
+                <div class="fs-recipe-meta">
+                  <i class="bi bi-clock"></i> Prep: 15 min
+                </div>
+                <a href="recipe-detail.php" class="btn btn-fs-outline">View Recipe</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="fs-recipe-card card">
+              <div class="fs-recipe-thumb fs-recipe-thumb--kottu">
+                <!-- <i class="bi bi-egg-fried"></i> -->
+                 <img src="https://static.vecteezy.com/system/resources/previews/050/752/018/large_2x/low-angle-view-of-chicken-kottu-dish-on-white-background-photo.jpg" alt="Chicken Kottu" class="img-fluid rounded">
+                <span class="fs-rating-badge"><i class="bi bi-star-fill"></i> 4.8/5</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Chicken Kottu</h3>
+                <div class="fs-recipe-meta">
+                  <i class="bi bi-clock"></i> Prep: 25 min
+                </div>
+                <a href="recipe-detail.php" class="btn btn-fs-outline">View Recipe</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="fs-recipe-card card">
+              <div class="fs-recipe-thumb fs-recipe-thumb--stirfry">
+                <!-- <i class="bi bi-flower2"></i> -->
+                 <img src="https://skinnyms.com/wp-content/uploads/2018/01/Broccoli-and-Mushroom-Stir-Fry-Vegan-Stir-Fry-Recipes.jpg" alt="Vegan Stir-Fry" class="img-fluid rounded">
+                <span class="fs-rating-badge"><i class="bi bi-star-fill"></i> 4.2/5</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Vegan Stir-Fry</h3>
+                <div class="fs-recipe-meta">
+                  <i class="bi bi-clock"></i> Prep: 15 min
+                </div>
+                <a href="recipe-detail.php" class="btn btn-fs-outline">View Recipe</a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CTA BANNER ============================= -->
+    <!-- <section class="fs-section pt-0">
+      <div class="container">
+        <div class="fs-cta d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <div>
+            <h2>Only got a few ingredients?</h2>
+            <p>Try our "What's in My Fridge?" smart search — tell us what you have, we'll tell you what to cook.</p>
+          </div>
+          <a href="fridge-search.php" class="btn btn-fs-mango">
+            Try Now <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ===================== TRENDING RECIPES CAROUSEL ===================== -->
+    <section class="fs-section">
+      <div class="container">
+        <h2 class="fs-section-title">Trending Recipes</h2>
+        <p class="fs-section-sub">This week's most favourited dishes from the FlavorSync community.</p>
+
+        <div id="trendingCarousel" class="carousel slide" data-bs-ride="carousel">
+
+          <div class="carousel-indicators position-static mb-4">
+            <button type="button" data-bs-target="#trendingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#trendingCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#trendingCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <div class="fs-carousel-slide fs-slide--1 d-flex align-items-center gap-4">
+                <!-- <div class="fs-carousel-slide__icon"><i class="bi bi-fire"></i></div> -->
+
+                <div>
+                  <h3>Chicken Kottu</h3>
+                  <p>The Sri Lankan street-food favourite, chopped and stir-fried to order. 2.3k favourites this week.</p>
+                  <a href="recipe-detail.php" class="btn btn-fs-mango btn-sm">View Recipe</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="fs-carousel-slide fs-slide--2 d-flex align-items-center gap-4">
+                <!-- <div class="fs-carousel-slide__icon"><i class="bi bi-flower2"></i></div> -->
+                <div>
+                  <h3>Vegan Stir-Fry</h3>
+                  <p>A vibrant, veg-forward wok dish ready in 15 minutes. 1.8k favourites this week.</p>
+                  <a href="recipe-detail.php" class="btn btn-fs-mango btn-sm">View Recipe</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="fs-carousel-slide fs-slide--3 d-flex align-items-center gap-4">
+                <!-- <div class="fs-carousel-slide__icon"><i class="bi bi-egg-fried"></i></div> -->
+
+                <div>
+                  <h3>Egg Fried Rice</h3>
+                  <p>The five-ingredient weeknight staple everyone keeps coming back to. 1.6k favourites this week.</p>
+                  <a href="recipe-detail.php" class="btn btn-fs-mango btn-sm">View Recipe</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#trendingCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="fs-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+          <a href="index.php" class="navbar-brand fs-brand mb-2 d-inline-flex">
+            <i class="bi bi-egg-fried"></i> FlavorSync
+          </a>
+          <p class="mb-3">Your advanced digital recipe book — cook smarter with what's already in your kitchen.</p>
+          <div class="fs-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="FlavorSync on Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="FlavorSync on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="FlavorSync on Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="contact.php">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h6>Explore</h6>
+          <ul class="list-unstyled">
+            <!-- <li class="mb-2"><a href="fridge-search.php">Fridge Search</a></li> -->
+            <li class="mb-2"><a href="recipes.php">Recipes</a></li>
+            <!-- <li class="mb-2"><a href="favorites.html">Favorites</a></li> -->
+          </ul>
+        </div>
+
+      </div>
+
+      <hr>
+      <p class="fs-copyright mb-0 text-center">&copy; 2026 FlavorSync. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Vanilla JS: basic interactions -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
